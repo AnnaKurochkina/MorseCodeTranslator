@@ -26,6 +26,8 @@ describe("translateFromEnglishToMorse", () => {
     });
     
     it("should be case insensitive", () => {
+        const result = translateFromEnglishToMorse("Hello World");
+        expect(result).toBe(".... . .-.. .-.. --- / .-- --- .-. .-.. -..");
     });
     
     it("should check for punctuation characters", () => {
