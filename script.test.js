@@ -31,6 +31,8 @@ describe("translateFromEnglishToMorse", () => {
     });
     
     it("should check for punctuation characters", () => {
+        const result = translateFromEnglishToMorse("thanks,..!");
+        expect(result).toBe("- .... .- -. -.- ... --..-- .-.-.- .-.-.- -.-.--");
     });
     
     it("should check for combination of different chars", () => {  
