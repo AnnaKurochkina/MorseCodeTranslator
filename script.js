@@ -41,7 +41,7 @@ export const translateFromEnglishToMorse = (phrase) => {
     const words = phrase.split(" ");
     let morseWords = [];
     words.forEach(word => {
-        const characters = word.split("");
+        const characters = word.toLowerCase().split("");
         const morseCharacters = characters.map(char => engToMorse[char] ? engToMorse[char] : "");
         const morseWord = morseCharacters.join(" ");
         morseWords.push(morseWord);
