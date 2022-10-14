@@ -1,6 +1,5 @@
-
 export const translateFromEnglishToMorse = (phrase) => {
-    
+
     const engToMorse = { 
         "a": ".-",
         "b": "-...",
@@ -60,7 +59,67 @@ export const translateFromEnglishToMorse = (phrase) => {
     return morseWords.join(" / ");
 };
 
-export const translateFromMorseToEnglish = (phrase) => {
-    return "";
-};
 
+export const translateFromMorseToEnglish = (phrase) => {
+
+    const morseToEnglish = { 
+        ".-": "a",
+        "-...": "b",
+        "-.-.": "c",
+        "-..": "d",
+        ".": "e",
+        "..-.": "f",
+        "--.": "g",
+        "....": "h",
+        "..": "i",
+        ".---": "j",
+        "-.-": "k",
+        ".-..": "l",
+        "--": "m",
+        "-.": "n",
+        "---": "o",
+        ".--.": "p",
+        "--.-": "q",
+        ".-.": "r",
+        "...": "s",
+        "-": "t",
+        "..-": "u",
+        ".--": "w",
+        "-..-": "x",
+        "-.--": "y",
+        "--..": "z" ,
+        ".----": "1",
+        "..---": "2",
+        "...--": "3",
+        "....-": "4",
+        ".....": "5",
+        "-....": "6",
+        "--...": "7",
+        "---..": "8",
+        "----.": "9",
+        "-----": "0",
+        ".-.-.-": ".",
+        "-.--.": "(",
+        "-.--.-": ")",
+        "--..--": ",",
+        ":": '---...',
+        "-.-.-.": ";",
+        "-..-.": "/",
+        "-...-": "=",
+        ".--.-.": "@",
+        "-.-.--": "!",
+        ".-...": "&",
+    };
+    
+    const words = phrase.split(" / ");
+    let engWords = [];
+
+    words.forEach(word => {
+        const characters = word.split(" ");
+        const engCharacters = characters.map(char => morseToEnglish[char] ? morseToEnglish[char] : "")
+        const engWord = engCharacters.join("")
+        engWords.push(engWord);
+    });
+    return engWords.join(" ");
+
+};

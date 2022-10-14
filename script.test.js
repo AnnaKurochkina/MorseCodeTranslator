@@ -45,8 +45,51 @@ describe("translateFromEnglishToMorse", () => {
     });
     
     it("test for invalid input", () => {
-        const result = translateFromEnglishToMorse("");
+        const result = translateFromEnglishToMorse("-");
         expect(result).toBe("");
     });
+});
 
+
+describe("translateFromMorseToEnglish", () => {
+
+    it("should convert a valid character", () => {  
+        const result = translateFromMorseToEnglish(".-");
+        expect(result).toBe("a");
+    });
+
+    it("should handle translation of multiple words", () => {
+        const result = translateFromMorseToEnglish("- . ... - .. -. --. / .. ... / -.. .. ..-. ..-. .. -.-. ..- .-.. -");
+        expect(result).toBe("testing is difficult");
+    });
+
+    it("should convert a space between words", () => {
+        const result = translateFromMorseToEnglish("-.-. .- - / -.. --- --. / -- --- ..- ... .");
+        expect(result).toBe("cat dog mouse");
+    });
+
+    it("should convert a number", () => {  
+        const result = translateFromMorseToEnglish("..... ..... ..---");
+        expect(result).toBe("552");
+    });
+    
+    it("should check for punctuation characters", () => {
+        const result = translateFromMorseToEnglish("- .... .- -. -.- ... --..-- .-.-.- .-.-.- -.-.--");
+        expect(result).toBe("thanks,..!");
+    });
+    
+    it("should check for combination of different chars", () => {
+        const result = translateFromMorseToEnglish(".- / ..--- ..... --..-- / -... ..--- --... --..-- / -.-. ...-- ...-- -.-.--");
+        expect(result).toBe("a 25, b27, c33!");
+    });
+    
+    it("test for no input", () => {
+        const result = translateFromMorseToEnglish("");
+        expect(result).toBe("");
+    });
+    
+    it("test for invalid input", () => {
+        const result = translateFromMorseToEnglish("abc");
+        expect(result).toBe("");
+    });
 });
