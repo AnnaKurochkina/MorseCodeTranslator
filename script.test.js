@@ -19,9 +19,5 @@ describe("translateFromEnglishToMorse", () => {
         expect(result).toBe("-.-. .- - / -.. --- --. / -- --- ..- ... .");
 
     });
-    it("should convert a space between characters", () => {
-        const result = translateFromEnglishToMorse("javascript");
-        expect(result).toBe(".--- .- ...- .- ... -.-. .-. .. .--. -");
-    });
 
 });
