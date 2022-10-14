@@ -20,4 +20,24 @@ describe("translateFromEnglishToMorse", () => {
 
     });
 
+    it("should convert a number", () => {  
+        const result = translateFromEnglishToMorse("552");
+        expect(result).toBe("..... ..... ..---");
+    });
+    
+    it("should be case insensitive", () => {
+    });
+    
+    it("should check for punctuation characters", () => {
+    });
+    
+    it("should check for combination of different chars", () => {  
+    });
+    
+    it("test for no input", () => {
+    });
+    
+    it("test for invalid input", () => {
+    });
+
 });
