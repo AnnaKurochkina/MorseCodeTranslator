@@ -17,7 +17,6 @@ describe("translateFromEnglishToMorse", () => {
     it("should convert a space between words", () => {
         const result = translateFromEnglishToMorse("cat dog mouse");
         expect(result).toBe("-.-. .- - / -.. --- --. / -- --- ..- ... .");
-
     });
 
     it("should convert a number", () => {  
@@ -35,13 +34,19 @@ describe("translateFromEnglishToMorse", () => {
         expect(result).toBe("- .... .- -. -.- ... --..-- .-.-.- .-.-.- -.-.--");
     });
     
-    it("should check for combination of different chars", () => {  
+    it("should check for combination of different chars", () => {
+        const result = translateFromEnglishToMorse("a 25, B27, c33!");
+        expect(result).toBe(".- / ..--- ..... --..-- / -... ..--- --... --..-- / -.-. ...-- ...-- -.-.--");
     });
     
     it("test for no input", () => {
+        const result = translateFromEnglishToMorse("");
+        expect(result).toBe("");
     });
     
     it("test for invalid input", () => {
+        const result = translateFromEnglishToMorse("");
+        expect(result).toBe("");
     });
 
 });
