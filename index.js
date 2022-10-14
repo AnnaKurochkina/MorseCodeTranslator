@@ -13,11 +13,11 @@ const engWordOutput = document.querySelector("#EnglishOutput");
 translateButton.addEventListener("click", (event) => {
     let phraseToTranslate = engWordInput.value;
     let result = translateFromEnglishToMorse(phraseToTranslate);
-    morseWordOutput.innerText = result;
+    morseWordOutput.value = result;
 });
 
 translateButtonMorse.addEventListener("click", (event) => {
     let morseToTranslate = morseWordInput.value;
     let result = translateFromMorseToEnglish(morseToTranslate);
-    engWordOutput.innerText = result;
+    engWordOutput.value = result;
 });
